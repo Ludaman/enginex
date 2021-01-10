@@ -5,7 +5,7 @@ metadata:
   labels:
     app: reverseproxy
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: reverseproxy
@@ -18,6 +18,6 @@ spec:
       - name: reverseproxy
         image: ludaman64/enginex
         ports:
-        - containerPort: 80
+        - containerPort: 8080
 
 
