@@ -17,9 +17,8 @@ before_script:
 script:
   - docker --version # print the version for logging
   - docker build -t enginex .
-  - docker tag enginex ludaman64/enginex:latest
+  - docker tag enginex ludaman64/proj4reverseproxy:latest
 #Need to have set up these variables in Dockerhub prior to this step succeeding
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push ludaman64/enginex
-
+  - docker push ludaman64/proj4reverseproxy
